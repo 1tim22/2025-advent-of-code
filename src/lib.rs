@@ -4,7 +4,7 @@ pub fn count_invalid(table: &Vec<Vec<i64>>) -> i64 {
     let invalids: Vec<&i64> = table.iter().map(|range|
         // Filter ranges that contain invalid numbers
         range.iter().filter(|value|
-            Regex::new(r"^(\d+)\1$")
+            Regex::new(r"^(\d+)\1+$")
                 .expect("Invalid RegEx")
                 .is_match(&value.to_string())
                 .expect("Danger Will Robinson!")

@@ -24,7 +24,7 @@ fn test_example_input() {
 
     println!("Invalid Count: {:?}", count);
 
-    assert_eq!(count, 1227775554);
+    assert_eq!(count, 4174379265);
 }
 
 #[test]

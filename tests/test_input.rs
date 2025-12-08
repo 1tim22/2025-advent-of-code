@@ -11,5 +11,5 @@ fn test_input() {
 
     let count = count_invalid(&table);
 
-    assert_eq!(count, 32976912643);
+    assert_eq!(count, 54446379122);
 }
