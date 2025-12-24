@@ -57,9 +57,3 @@ a forklift (marked with `x`):
 
 Consider your complete diagram of the paper roll locations. *How many
 rolls of paper can be accessed by a forklift?*
-
-To play, please identify yourself via one of these services:
-
-[\[GitHub\]](/auth/github) [\[Google\]](/auth/google)
-[\[Twitter\]](/auth/twitter) [\[Reddit\]](/auth/reddit) [- [\[How Does
-Auth Work?\]](/2025/about#faq_auth)]{.quiet}
