@@ -10,5 +10,5 @@ fn test_input() {
 
     let result = window(table);
 
-    assert_eq!(result, 1508);
+    assert_eq!(result, 8538);
 }

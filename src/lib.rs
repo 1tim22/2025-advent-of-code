@@ -8,18 +8,16 @@
 // Thus, all 8 possible adjacent locations must be calculated for each position. If the
 // sum of all adjacent rolls is less than 4, the roll at the current index qualifies
 // for access by a forklift.
+// Part 2 made use of recursion!
 pub fn window(table: Vec<Vec<u32>>) -> u32 {
-    let count: i64 = table.first()
-        .expect("Could not parse table.")
-        .len() as i64;
+    let count = table.first().expect("Could not parse table.").len() as i64;
+    let list  = table.into_iter().flatten().collect::<Vec<u32>>();
 
-    println!("{:?}", count);
+    remove_rolls(list, count)
+}
 
-    let list = table.into_iter()
-        .flatten()
-        .collect::<Vec<u32>>();
-
-    list.iter().enumerate().map(|(index, &value)| {
+pub fn remove_rolls(list: Vec<u32>, count: i64) -> u32 {
+    let accessible_list = list.iter().enumerate().map(|(index, &value)| {
         let relative_index = index as i64 % count;
 
         if 1 > value {
@@ -52,16 +50,22 @@ pub fn window(table: Vec<Vec<u32>>) -> u32 {
 
             let adjacent_rolls = offsets.iter().sum::<u32>();
 
-            println!("index: {:?}, relative_index: {:?}, adjacent_rolls: {:?}, {:?}",
-                index,
-                relative_index,
-                adjacent_rolls,
-                offsets
-            );
-
-            if (adjacent_rolls as u32) < 4 { 1 } else { 0 }
+            if adjacent_rolls < 4 { 1 } else { 0 }
         }
-    }).sum::<u32>()
+    }).collect::<Vec<u32>>();
+
+    // Recursively remove accessible paper rolls until no more rolls are removed
+    let sum = accessible_list.iter().sum::<u32>();
+
+    if 0 < sum {
+        let new_list = list.iter().enumerate().map(|(index, &value)| {
+            value - accessible_list[index]
+        }).collect();
+
+        sum + remove_rolls(new_list, count)
+    } else {
+        sum
+    }
 }
 
 pub fn parse_input(contents: String) -> Vec<Vec<u32>> {
