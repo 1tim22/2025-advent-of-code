@@ -9,5 +9,7 @@ fn test_input() {
 
     let result = count_fresh_possible(ranges);
 
-    assert_eq!(result, 821);
+    // assert_eq!(result, 307132225096046); // Too low
+    assert_eq!(result, 344771884978261);
+    // assert_eq!(result, 654602082915594); // Too high
 }
