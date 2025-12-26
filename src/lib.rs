@@ -14,6 +14,19 @@ pub fn count_fresh(ranges: Vec<RangeInclusive::<u64>>, ingredients: Vec<u64>) ->
         .sum()
 }
 
+pub fn count_fresh_possible(ranges: Vec<RangeInclusive::<u64>>) -> usize {
+    let mut test = ranges.iter().flat_map(|range| {
+        range.clone().collect::<Vec<u64>>()
+    }).collect::<Vec<u64>>();
+
+    test.sort();
+    test.dedup();
+
+    println!("{:?}", test);
+
+    test.len()
+}
+
 pub fn parse_input_ranges(contents: String) -> Vec<RangeInclusive::<u64>> {
     Regex::new(r"(\d+)[-](\d+)")
         .expect("Invalid RegEx")

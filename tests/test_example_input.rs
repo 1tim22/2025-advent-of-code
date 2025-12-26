@@ -16,13 +16,9 @@ fn test_example_input() {
         32
     ";
 
-    let ranges      = parse_input_ranges(     input.to_string());
-    let ingredients = parse_input_ingredients(input.to_string());
+    let ranges = parse_input_ranges(input.to_string());
 
-    // println!("{:?}", ranges);
-    // println!("{:?}", ingredients);
+    let result = count_fresh_possible(ranges);
 
-    let result = count_fresh(ranges, ingredients);
-
-    assert_eq!(result, 3);
+    assert_eq!(result, 14);
 }
