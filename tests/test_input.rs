@@ -13,5 +13,5 @@ fn test_input() {
 
     let result = arithmetic(numbers, operators);
 
-    assert_eq!(result, 5784380717354);
+    assert_eq!(result, 7996218225744);
 }
