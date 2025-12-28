@@ -150,9 +150,3 @@ beam-splitting properties of the tachyon manifold. In this example, a
 tachyon beam is split a total of *`21`* times.
 
 Analyze your manifold diagram. *How many times will the beam be split?*
-
-To play, please identify yourself via one of these services:
-
-[\[GitHub\]](/auth/github) [\[Google\]](/auth/google)
-[\[Twitter\]](/auth/twitter) [\[Reddit\]](/auth/reddit) [- [\[How Does
-Auth Work?\]](/2025/about#faq_auth)]{.quiet}
